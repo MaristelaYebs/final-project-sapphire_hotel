@@ -1,0 +1,435 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+}
+
+/* Body Styling */
+body {
+  background-color: #f5f9fc;
+  color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+  background: #58aaf1;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;  
+  font-weight: bold;
+}
+
+.navbar__logo-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar__menu .navbar__links {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar__menu .navbar__links:hover {
+  color: #5775fa;
+}
+
+.navbar__btn .button {
+  background-color: #1e88e5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.navbar__btn .button:hover {
+  background-color: #0d47a1;
+}
+
+.navbar__toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.navbar__toggle .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.main {
+  position: relative;
+  background-image: url ("img/hotel.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0; /* Ensure no margin */
+  padding: 0; /* Ensure no padding */
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.main__container {
+  position: relative;
+  z-index: 1;
+}
+
+.main__content h1 {
+  font-size: 4rem;
+  color: #bbdefb;
+  margin-bottom: 20px;
+}
+
+.main__content h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.main__content .main_btn {
+  background-color: #bcd2e6;
+  color: #0d47a1;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.main_btn a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.main__content .main_btn:hover {
+  background-color: #8b7ff7;
+}
+
+/* About Section */
+/* About Section */
+.about {
+  padding: 50px 0; /* Add vertical spacing */
+}
+
+.about .container {
+  max-width: 1200px; /* Limit container width */
+  margin: 0 auto; /* Center the container */
+}
+
+.about h2 {
+  color: #0d47a1; /* Deep sapphire blue */
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.amenities-list {
+  list-style: none;
+  padding: 50px;
+  margin: 60px 20px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.amenities-list li {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #333;
+}
+
+.amenities-list li {
+  margin-bottom: 30px;
+}
+.about p {
+  font-size: 3 rem !important;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px 0; /* Vertical spacing between paragraphs */
+  max-width: 800px; /* Limit text width */
+  margin: 0 auto; /* Center the text */
+  padding-left: 40px; /* Add left padding */
+  padding-right: 40px; /* Add right padding */
+}
+
+.about img {
+  display: block;
+  margin: 20px auto; /* Center the image with vertical spacing */
+  max-width: 100%; /* Ensure the image scales properly */
+  height: auto;
+}
+
+
+/* Footer Styling */
+.footer {
+  background-color: #5775fa;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer .social-links a {
+  display: inline-block;
+}
+
+.footer .social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.footer .social-links img:hover {
+  transform: scale(1.2);
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 960px) {
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar__toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar__toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navbar__menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #58aaf1;
+    z-index: 99;
+    padding: 20px;  
+  }
+
+  .navbar__menu.active .navbar__links {
+    color: #fff;
+    padding: 10px 0;
+  }
+}
+
+/* Edit Profile Page Styles */
+.edit-profile-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.edit-profile-container h1 {
+  color: #0d47a1;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #0d47a1;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(13, 71, 161, 0.2);
+}
+
+.btn-save {
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-right: 1rem;
+}
+
+.btn-save:hover {
+  background-color: #0b3d8a;
+  transform: translateY(-2px);
+}
+
+.btn-cancel {
+  background-color: white;
+  color: #0d47a1;
+  border: 1px solid #0d47a1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-cancel:hover {
+  background-color: #f0f7ff;
+  transform: translateY(-2px);
+}
+
+.alert {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.alert-error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .edit-profile-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .btn-save, .btn-cancel {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+}
+
+.notification-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  transition: background-color 0.2s ease;
+}
+
+.notification-item:hover {
+  background-color: #f8f9fa;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+/* Add these styles to your booking.css */
+.booking-summary .card {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.booking-summary .card-header {
+    padding: 1.5rem;
+}
+
+.booking-summary .list-group-item {
+    padding: 1rem 1.25rem;
+}
+
+.booking-summary .badge {
+    font-size: 0.9rem;
+    padding: 0.35em 0.65em;
+}
