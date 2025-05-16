@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__container">
-        <a href="index.php" id="navbar__logo">
+        <a href="welcome.php" id="navbar__logo">
           <img
             src="img/sh icon.png"
             alt="Sapphire Hotel Logo"
@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <ul class="navbar__menu">
           <li class="navbar__item">
-            <a href="index.php" class="navbar__links">Home</a>
+            <a href="welcome.php" class="navbar__links">Home</a>
           </li>
           <li class="navbar__item">
             <a href="services.php" class="navbar__links">Services</a>

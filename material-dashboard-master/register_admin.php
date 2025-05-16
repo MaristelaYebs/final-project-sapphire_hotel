@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insert into database
         $sql = "INSERT INTO admin (name, email, password, mobile) VALUES ('$name', '$email', '$password', '$mobile')";
         if ($conn->query($sql) === TRUE) {
-          echo "<script> alert('Registration successful!'); window.location.href = '/final-project-sapphire_hotel/frontend/admin_login.php';
+          echo "<script> alert('Registration successful!'); window.location.href = '/final-project-sapphire_hotel/admin_login.php';
 </script>";
 
         } else {
@@ -54,9 +54,9 @@ $conn->close();
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="../assets/img/apple-icon.png"
+      href="./assets/img/apple-icon.png"
     />
-    <link rel="icon" type="image/png" href="../assets/img/logos/logo.jpg" />
+    <link rel="icon" type="image/png" href="./assets/img/logos/logo.jpg" />
     <title>Sapphire Hotel Admin</title>
     <!-- Fonts and icons -->
     <link
@@ -65,8 +65,8 @@ $conn->close();
       href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900"
     />
     <!-- Nucleo Icons -->
-    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script
       src="https://kit.fontawesome.com/42d5adcbca.js"
@@ -80,7 +80,7 @@ $conn->close();
     <!-- CSS Files -->
     <link
       id="pagestyle"
-      href="../assets/css/material-dashboard.css?v=3.2.0"
+      href="./assets/css/material-dashboard.css?v=3.2.0"
       rel="stylesheet"
     />
   </head>
@@ -168,7 +168,7 @@ $conn->close();
                     <button type="submit" class="btn btn-dark w-100">Register</button>
                     <p class="mt-4 text-sm text-center">
                       Already have an account?
-                      <a href="../../admin_login.php" class="text-primary text-gradient font-weight-bold">Sign in</a>
+                      <a href="../admin_login.php" class="text-primary text-gradient font-weight-bold">Sign in</a>
                     </p>
 
                   </form>

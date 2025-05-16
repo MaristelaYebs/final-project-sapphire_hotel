@@ -283,7 +283,14 @@ $result = $conn->query($sql);
                     </div>
                 </div>
                 <div class="card-body px-0 pb-2">
-                    <div class="table-responsive p-0">
+                      <?php if (isset($_SESSION['message'])): ?>
+                        <div class="alert alert-info text-center mx-3 my-2">
+                          <?= $_SESSION['message'] ?>
+                          <?php unset($_SESSION['message']); ?>
+                        </div>
+                      <?php endif; ?>
+                      
+                      <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
@@ -324,15 +331,21 @@ $result = $conn->query($sql);
                                                        value="<?= htmlspecialchars($row['password']) ?>" readonly 
                                                        style="border: none; background: transparent; padding: 0; width: 100px;" />
                                             </td>
-                                            <td class="align-middle">
-                                                <a href="#" class="btn btn-sm btn-primary"
-                                                   data-bs-toggle="modal"
-                                                   data-bs-target="#editGuestModal"
-                                                   onclick='fillEditForm(<?= json_encode($row) ?>)'>
-                                                   Edit
-                                                </a>
-                                                <a href="delete.php?id=<?= $row['user_id'] ?>" class="btn btn-sm btn-danger">Delete</a>
+                                              <td class="align-middle">
+                                              <a href="#" class="btn btn-sm btn-primary"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#editGuestModal"
+                                                onclick='fillEditForm(<?= json_encode($row) ?>)'>
+                                                Edit
+                                              </a>
+
+                                              <a href="delete.php?id=<?= $row['user_id'] ?>" 
+                                                class="btn btn-sm btn-danger"
+                                                onclick="return confirm('Are you sure you want to delete this guest?');">
+                                                Delete
+                                              </a>
                                             </td>
+
                                         </tr>
                                     <?php endwhile; ?>
                                 <?php else: ?>

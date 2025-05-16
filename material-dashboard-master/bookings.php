@@ -96,64 +96,134 @@ $result = $conn->query($sql);
 
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
     <div class="container-fluid py-2">
-      <div class="row">
-        <div class="col-12">
-          <div class="card my-4">
-            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-              <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Booking Records</h6>
-              </div>
-            </div>
-            <div class="card-body px-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
+  <div class="row">
+    <div class="col-12">
+      <div class="card my-4">
+        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+          <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+            <h6 class="text-white text-capitalize ps-3">Booking Records</h6>
+          </div>
+        </div>
+        <div class="card-body px-0 pb-2">
+          <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Reservation ID</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Reservation Date</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Check-In</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Check-Out</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Room Type</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Total Amount</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php if ($result->num_rows > 0): ?>
+                  <?php while ($row = $result->fetch_assoc()): ?>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Reservation ID</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Reservation Date</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Check-In</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Check-Out</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Room Type</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Total Amount</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Actions</th>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img src="./assets/img/booked.png" class="avatar avatar-sm me-3 border-radius-lg" alt="user" />
+                          <p class="text-xs font-weight-bold mb-0"><?= htmlspecialchars($row['full_name']) ?></p>
+                        </div>
+                      </td>
+                      <td><p class="text-xs font-weight-bold mb-0"><?= $row['booking_id'] ?></p></td>
+                      <td><p class="text-xs font-weight-bold mb-0"><?= $row['reservation_date'] ?></p></td>
+                      <td><p class="text-xs font-weight-bold mb-0"><?= $row['check_in'] ?></p></td>
+                      <td><p class="text-xs font-weight-bold mb-0"><?= $row['check_out'] ?></p></td>
+                      <td><p class="text-xs font-weight-bold mb-0"><?= htmlspecialchars($row['room_type']) ?></p></td>
+                      <td><p class="text-xs font-weight-bold mb-0">₱<?= number_format($row['total_price'], 2) ?></p></td>
+                      <td>
+                        <button 
+                          class="btn btn-sm btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editBookingModal"
+                          onclick='fillEditBookingForm(<?= json_encode($row) ?>)'>
+                          Edit
+                        </button>
+
+                        <a href="delete_booking.php?id=<?= $row['booking_id'] ?>" 
+                           class="btn btn-sm btn-danger" 
+                           onclick="return confirm('Are you sure you want to delete this booking?');">
+                          Delete
+                        </a>
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    <?php if ($result->num_rows > 0): ?>
-                      <?php while ($row = $result->fetch_assoc()): ?>
-                        <tr>
-                          <td>
-                            <div class="d-flex align-items-center">
-                              <img src="./assets/img/booked.png" class="avatar avatar-sm me-3 border-radius-lg" alt="user" />
-                              <p class="text-xs font-weight-bold mb-0"><?= htmlspecialchars($row['full_name']) ?></p>
-                            </div>
-                          </td>
-                          <td><p class="text-xs font-weight-bold mb-0"><?= $row['booking_id'] ?></p></td>
-                          <td><p class="text-xs font-weight-bold mb-0"><?= $row['reservation_date'] ?></p></td>
-                          <td><p class="text-xs font-weight-bold mb-0"><?= $row['check_in'] ?></p></td>
-                          <td><p class="text-xs font-weight-bold mb-0"><?= $row['check_out'] ?></p></td>
-                          <td><p class="text-xs font-weight-bold mb-0"><?= htmlspecialchars($row['room_type']) ?></p></td>
-                          <td><p class="text-xs font-weight-bold mb-0">₱<?= number_format($row['total_price'], 2) ?></p></td>
-                          <td>
-                            <a href="edit_booking.php?id=<?= $row['booking_id'] ?>" class="btn btn-sm btn-primary">Edit</a>
-                            <a href="delete_booking.php?id=<?= $row['booking_id'] ?>" class="btn btn-sm btn-danger">Delete</a>
-                          </td>
-                        </tr>
-                      <?php endwhile; ?>
-                    <?php else: ?>
-                      <tr>
-                        <td colspan="8" class="text-center text-secondary">No bookings found.</td>
-                      </tr>
-                    <?php endif; ?>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+                  <?php endwhile; ?>
+                <?php else: ?>
+                  <tr>
+                    <td colspan="8" class="text-center text-secondary">No bookings found.</td>
+                  </tr>
+                <?php endif; ?>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+  <!-- Edit Guest Modal -->
+<div class="modal fade" id="editBookingModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="POST" action="edit_booking.php">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Booking</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="booking_id" id="editBookingId">
+          
+          <div class="mb-3">
+            <label>Full Name</label>
+            <input type="text" class="form-control" name="full_name" id="editFullName" required>
+          </div>
+          
+          <div class="mb-3">
+            <label>Check-in Date</label>
+            <input type="date" class="form-control" name="check_in" id="editCheckIn" required>
+          </div>
+          
+          <div class="mb-3">
+            <label>Check-out Date</label>
+            <input type="date" class="form-control" name="check_out" id="editCheckOut" required>
+          </div>
+          
+          <div class="mb-3">
+            <label>Room Type</label>
+            <input type="text" class="form-control" name="room_type" id="editRoomType" required>
+          </div>
+          
+          <div class="mb-3">
+            <label>Total Price</label>
+            <input type="number" step="0.01" class="form-control" name="total_price" id="editTotalPrice" required>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function fillEditBookingForm(booking) {
+    document.getElementById('editBookingId').value = booking.booking_id;
+    document.getElementById('editFullName').value = booking.full_name;
+    document.getElementById('editCheckIn').value = booking.check_in;
+    document.getElementById('editCheckOut').value = booking.check_out;
+    document.getElementById('editRoomType').value = booking.room_type;
+    document.getElementById('editTotalPrice').value = booking.total_price;
+  }
+</script>
+
   </main>
 
   <footer class="footer py-4">

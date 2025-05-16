@@ -30,7 +30,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];
-            header("Location: index.php");
+            header("Location: welcome.php");
             exit();
         } else {
             echo "<script type='text/javascript'>

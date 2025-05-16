@@ -38,7 +38,7 @@ $total_amount = $room_price * $nights;
   <!-- Navbar (same as booking.php) -->
   <nav class="navbar">
     <div class="navbar__container">
-      <a href="index.php" id="navbar__logo">
+      <a href="welcome.php" id="navbar__logo">
         <img src="img/sh icon.png" alt="Sapphire Hotel Logo" class="navbar__logo-img" />
         Sapphire Hotel
       </a>
@@ -46,7 +46,7 @@ $total_amount = $room_price * $nights;
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </div>
       <ul class="navbar__menu">
-        <li class="navbar__item"><a href="index.php" class="navbar__links">Home</a></li>
+        <li class="navbar__item"><a href="welcome.php" class="navbar__links">Home</a></li>
         <li class="navbar__item"><a href="services.php" class="navbar__links">Services</a></li>
         <li class="navbar__item"><a href="rooms.php" class="navbar__links">Rooms</a></li>
         <li class="navbar__item"><a href="contact.php" class="navbar__links">Contact</a></li>
@@ -127,7 +127,7 @@ $total_amount = $room_price * $nights;
 
             <div class="d-flex justify-content-between mt-4">
               <a href="rooms.php" class="btn btn-outline-primary">Book Another Room</a>
-              <a href="index.php" class="btn btn-primary">Back to Home</a>
+              <a href="welcome.php" class="btn btn-primary">Back to Home</a>
             </div>
           </div>
         </div>
