@@ -58,17 +58,17 @@ $result = $conn->query($sql);
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="tables.php">
-            <i class="material-symbols-rounded opacity-5">receipt_long</i>
-            <span class="nav-link-text ms-1">User Profiles</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active bg-gradient-dark text-white" href="bookings.php">
-            <i class="material-symbols-rounded opacity-5">table_view</i>
-            <span class="nav-link-text ms-1">Bookings</span>
-          </a>
-        </li>
+            <a class="nav-link text-dark" href="tables.php">
+              <i class="material-symbols-rounded opacity-5">table_view</i>
+              <span class="nav-link-text ms-1">User Profiles</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="bookings.php">
+              <i class="material-symbols-rounded opacity-5">receipt_long</i>
+              <span class="nav-link-text ms-1">Bookings</span>
+            </a>
+          </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="notifications.php">
             <i class="material-symbols-rounded opacity-5">notifications</i>

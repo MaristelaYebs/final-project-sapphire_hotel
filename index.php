@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sapphire Hotel</title>
+    <link rel="icon" type="image/png" href="./assets/img/logos/logo.jpg" />
+    <title>Sapphire Hotel Admin</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>

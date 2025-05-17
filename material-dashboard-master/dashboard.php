@@ -46,7 +46,7 @@ $conn->close();
       sizes="76x76"
       href="./assets/img/apple-icon.png"
     />
-    <link rel="icon" type="image/png" href="./assets/img/logos/logo.jpg" />
+     <link rel="icon" type="image/png" href="./assets/img/logos/logo.jpg" />
     <title>Sapphire Hotel Admin</title>
     
     <!--     Fonts and icons     -->
@@ -107,7 +107,7 @@ $conn->close();
           <li class="nav-item">
             <a
               class="nav-link active bg-gradient-dark text-white"
-              href="./pages/dashboard.php"
+              href="dashboard.php"
             >
               <i class="material-symbols-rounded opacity-5">dashboard</i>
               <span class="nav-link-text ms-1">Dashboard</span>
