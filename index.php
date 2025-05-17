@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sapphire Hotel</title>
-
-  <!-- Favicon (small icon in the browser tab) -->
   <link rel="icon" type="image/png" sizes="32x32" href="img/logo.jpg" />
   <!-- Optional high-res version for Retina / pinned tabs -->
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />

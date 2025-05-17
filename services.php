@@ -9,6 +9,7 @@ include("./session.php");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services - Sapphire Hotel</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.jpg" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/services.css" />
     <!-- Font Awesome Icons -->
