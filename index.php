@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="./assets/img/logos/logo.jpg" />
-    <title>Sapphire Hotel Admin</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sapphire Hotel</title>
+
+  <!-- Favicon (small icon in the browser tab) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/logo.jpg" />
+  <!-- Optional high-res version for Retina / pinned tabs -->
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />
+  <!-- Optional iOS home-screen icon -->
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
   <body>
     <!-- Login Modal -->
     <div id="loginModal" style="

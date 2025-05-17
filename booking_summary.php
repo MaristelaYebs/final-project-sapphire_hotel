@@ -29,10 +29,17 @@ $total_amount = $room_price * $nights;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Booking Summary - Sapphire Hotel</title>
+  <title>Contact - Sapphire Hotel</title>
+
+  <!-- Favicon (small icon in the browser tab) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/logo.jpg" />
+  <!-- Optional high-res version for Retina / pinned tabs -->
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />
+  <!-- Optional iOS home-screen icon -->
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/booking.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/contact.css" />
 </head>
 <body>
   <!-- Navbar (same as booking.php) -->
