@@ -46,7 +46,7 @@ $conn->close();
       sizes="76x76"
       href="./assets/img/apple-icon.png"
     />
-     <link rel="icon" type="image/png" href="./assets/img/logos/logo.jpg" />
+    <link rel="icon" type="image/png" href="./assets/img/logos/logo.jpg" />
     <title>Sapphire Hotel Admin</title>
     
     <!--     Fonts and icons     -->

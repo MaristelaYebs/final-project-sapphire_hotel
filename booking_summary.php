@@ -29,17 +29,11 @@ $total_amount = $room_price * $nights;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Sapphire Hotel</title>
-
-  <!-- Favicon (small icon in the browser tab) -->
+  <title>Booking Summary - Sapphire Hotel</title>
   <link rel="icon" type="image/png" sizes="32x32" href="img/logo.jpg" />
-  <!-- Optional high-res version for Retina / pinned tabs -->
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png" />
-  <!-- Optional iOS home-screen icon -->
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/booking.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
   <!-- Navbar (same as booking.php) -->
@@ -113,7 +107,7 @@ $total_amount = $room_price * $nights;
                   </li>
                   <li class="list-group-item">
                     <strong>Total Amount:</strong> 
-                    <span class="text-primary fw-bold">₱<?= $booking['total_price'] ?>
+                    <span class="text-primary fw-bold">₱<?= number_format($booking['total_price'], 0) ?>
                   </li></span>
                   </li>
                   <li class="list-group-item">
@@ -146,7 +140,6 @@ $total_amount = $room_price * $nights;
   <footer class="footer">
     <div class="container">
       <p>© 2025 Sapphire Hotel. All rights reserved.</p>
-      <p>John Paul Bon • Trisha Besa • Andrew Fajardo • Delia Portes • Maristela Yebra</p>
       <div class="social-links">
         <a href="#"><img src="img/facebook.png" alt="Facebook" /></a>
         <a href="#"><img src="img/twitter.png" alt="Twitter" /></a>
